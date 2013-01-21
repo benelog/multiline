@@ -1,0 +1,63 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.adrianwalker</groupId>
+	<artifactId>multiline-string-usage</artifactId>
+	<version>0.1.1</version>
+	<packaging>jar</packaging>
+	<name>Multiline String Usage</name>
+
+	<description>
+    Usage of @Multiline annotation and processor
+    Usage: mvn clean install
+  </description>
+
+	<url>http://www.adrianwalker.org</url>
+
+	<organization>
+		<name>adrianwalker.org</name>
+		<url>http://www.adrianwalker.org</url>
+	</organization>
+
+	<developers>
+		<developer>
+			<name>Adrian Walker</name>
+			<email>ady.walker@gmail.com</email>
+			<organization>adrianwalker.org</organization>
+			<organizationUrl>http://www.adrianwalker.org</organizationUrl>
+		</developer>
+	</developers>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>apt-maven-plugin</artifactId>
+				<version>1.0-alpha-5</version>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>org.adrianwalker</groupId>
+			<artifactId>multiline-string</artifactId>
+			<version>0.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.10</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- M2_REPO/org/adrianwalker/multiline-string/0.1.0/multiline-string-0.1.0.jar -->
+	</dependencies>
+</project>

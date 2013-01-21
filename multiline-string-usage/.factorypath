@@ -1,0 +1,4 @@
+<factorypath> 
+    <factorypathentry kind="EXTJAR" id="/home/benelog/workspace/multiline-string-usage/target/classes" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/adrianwalker/multiline-string/0.1.1/multiline-string-0.1.1.jar" enabled="true" runInBatchMode="false"/>
+</factorypath> 

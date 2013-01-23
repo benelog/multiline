@@ -11,11 +11,18 @@
     Multiline string implementation using 
     an annotation processor and javadoc
     Usage: mvn clean install
+    
+    Release process
+    
+    1. Create files for maven repositories. 'mvn -DaltDeploymentRepository=release-repo::default::file:../maven-repository deploy  '
+    2. git add, commit, push
+
   </description>
 	<scm>
 		<connection>scm:git:git://github.com/benelog/multiline.git</connection>
 		<developerConnection>scm:git:git@github.com:benelog/multiline.git</developerConnection>
 		<url>http://github.com/benelog/multiline/tree/master</url>
+
 	</scm>
 	<url>http://www.adrianwalker.org</url>
 	<organization>

@@ -11,14 +11,22 @@
     Usage of @Multiline annotation and processor
     Usage: mvn clean install
   </description>
-
+	<scm>
+		<connection>scm:git:git://github.com/benelog/multiline.git</connection>
+		<developerConnection>scm:git:git@github.com:benelog/multiline.git</developerConnection>
+		<url>http://github.com/benelog/multiline/tree/master</url>
+	</scm>
 	<url>http://www.adrianwalker.org</url>
-
 	<organization>
 		<name>adrianwalker.org</name>
 		<url>http://www.adrianwalker.org</url>
 	</organization>
-
+	<licenses>
+		<license>
+			<name>Common Public License Version 1.0</name>
+			<url>http://www.opensource.org/licenses/cpl1.0.txt</url>
+		</license>
+	</licenses>
 	<developers>
 		<developer>
 			<name>Adrian Walker</name>
@@ -26,7 +34,13 @@
 			<organization>adrianwalker.org</organization>
 			<organizationUrl>http://www.adrianwalker.org</organizationUrl>
 		</developer>
-	</developers>
+		<developer>
+			<name>Sanghyuk Jung</name>
+			<email>benelog@gmail.com</email>
+			<organization>benelog.net</organization>
+			<organizationUrl>http://www.benelog.net</organizationUrl>
+		</developer>
+	</developers>	
 	<build>
 		<plugins>
 			<plugin>
@@ -57,7 +71,14 @@
 			<version>4.10</version>
 			<scope>test</scope>
 		</dependency>
-
-		<!-- M2_REPO/org/adrianwalker/multiline-string/0.1.0/multiline-string-0.1.0.jar -->
 	</dependencies>
+	<repositories>
+		<repository>
+			<id>multiline.release.repository</id>
+			<url>https://raw.github.com/benelog/multiline/master/multiline-string/maven-repository</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>	
 </project>

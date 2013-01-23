@@ -14,10 +14,9 @@ public final class MultilineStringUsage {
     </body>
   </html>
   */
-  @Multiline
-  private static String html;
+  @Multiline private static String html;
    
   public static void main(final String[] args) {
-    System.out.println(html);
+	  System.out.println(html);
   }
 }

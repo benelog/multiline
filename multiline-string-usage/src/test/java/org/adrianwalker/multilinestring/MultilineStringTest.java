@@ -10,12 +10,13 @@ public class MultilineStringTest {
 	/**
 	DELETE
    FROM post
-   	*/ @Multiline 
-	public static String deleteFromPost;
+   	*/  
+	@Multiline static String deleteFromPost;
 
 	@Test
 	public void readMultilineString() {
 		System.out.println(deleteFromPost);
+		assertThat(deleteFromPost, is(notNullValue()));
 		assertThat(deleteFromPost.trim(), is("DELETE\n   FROM post"));
 	}
 }

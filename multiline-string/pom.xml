@@ -14,7 +14,7 @@
     
     Release process
     
-    1. Create files for maven repositories. 'mvn -DaltDeploymentRepository=release-repo::default::file:../maven-repository deploy  '
+    1. Create files for maven repositories. 'mvn -DaltDeploymentRepository=multiline-release-repo::default::file:../maven-repository deploy  '
     2. git add, commit, push
 
   </description>
@@ -118,4 +118,11 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	<distributionManagement>
+    <repository>
+        <id>multiline-release-repo</id>
+        <url>https://raw.github.com/benelog/multiline/master/multiline-string/maven-repository</url>
+    </repository>
+</distributionManagement>
+	
 </project>

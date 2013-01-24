@@ -14,10 +14,11 @@ import javax.lang.model.element.TypeElement;
 @SupportedAnnotationTypes({"org.adrianwalker.multilinestring.Multiline"})
 @SupportedSourceVersion(SourceVersion.RELEASE_6)
 public final class MultilineProcessor extends AbstractProcessor {
-  Processor delegator = null;
+  private Processor delegator = null;
   
   @Override
   public void init(final ProcessingEnvironment procEnv) {
+	  super.init(procEnv);
 	  String envClassName = procEnv.getClass().getName();
 	  if (envClassName.contains("com.sun.tools")) {
 		  delegator = new JavacMultilineProcessor();

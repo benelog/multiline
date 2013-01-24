@@ -10,9 +10,9 @@ public class MultilineStringTest {
 	/**
 	DELETE
    FROM post
-   	*/  
-	@Multiline static String deleteFromPost;
-
+   	*/
+	@Multiline final String deleteFromPost = null;
+	
 	@Test
 	public void readMultilineString() {
 		System.out.println(deleteFromPost);

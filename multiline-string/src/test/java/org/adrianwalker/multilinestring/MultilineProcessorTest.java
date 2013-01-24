@@ -43,7 +43,6 @@ public class MultilineProcessorTest {
 		assertThat(className,is("org.adrianwalker.multilinestring.EcjMultilineProcessor"));
 	}
 
-	
 	private String extractFieldClassName(String fieldName) throws IllegalAccessException {
 		Field field = FieldUtils.getField(MultilineProcessor.class, fieldName, true);
 		Object fieldInstance = field.get(processor);

@@ -1,4 +1,4 @@
-multiline
+Multiline
 =========
 
 Supports multiline-string literals in Java by annotation-processors and javadoc. 
@@ -24,5 +24,5 @@ is equivalent to the following expression in Groovy.
 	"""
 
 ## Settings
-	- Settings for a Maven project with Eclipse
-	- Settings for a Non-Maven Java Project with Eclipse
+- Settings for a Maven project with Eclipse
+- Settings for a Non-Maven Java Project with Eclipse

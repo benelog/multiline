@@ -10,15 +10,19 @@ You can use multiline string literals with javadoc comments and '@Multiline' ann
 
 For example,
 
-  /**
+	/**
 	DELETE
-  FROM post
+ 	FROM post
  	*/
 	@Multiline static String deleteFromPost;
 
-is equivalent to the following expression in groovy.
+is equivalent to the following expression in Groovy.
 
-	@Multiline static String deleteFromPost = """
-  DELETE
-  FROM post
-"""
+	static String deleteFromPost = """
+	DELETE
+	FROM post
+	"""
+
+## Settings
+	- Settings for a Maven project with Eclipse
+	- Settings for a Non-Maven Java Project with Eclipse

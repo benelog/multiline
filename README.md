@@ -1,9 +1,9 @@
 Multiline
 =========
 
-Supports multiline-string literals in Java by annotation-processors and javadoc. 
+Supports multiline-string literals in Java by annotation-processors and javadoc comments. 
 
-This project is originated from the blog post of Adrian Walker ( <http://www.adrianwalker.org/2011/12/java-multiline-string.html> ).
+This project is originated from Adrian Walker's blog post ( <http://www.adrianwalker.org/2011/12/java-multiline-string.html> ).
 
 ## Usage
 You can use multiline string literals with javadoc comments and '@Multiline' annotation.
@@ -26,3 +26,7 @@ is equivalent to the following expression in Groovy.
 ## Settings
 - Settings for a Maven project with Eclipse
 - Settings for a Non-Maven Java Project with Eclipse
+
+## Release Notes
+- 0.1.2 
+- 0.1.0 : the source code from [Adrian Walker's blog post](http://www.adrianwalker.org/2011/12/java-multiline-string.html)

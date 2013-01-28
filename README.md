@@ -24,8 +24,8 @@ is equivalent to the following expression in Groovy.
 	"""
 
 ## Settings
-- Settings for a Maven project with Eclipse
-- Settings for a Non-Maven Java Project with Eclipse
+- [Maven project with Eclipse](https://github.com/benelog/multiline/wiki/Maven-project-with-Eclipse)
+- [Non-Maven Java project with Eclipse](https://github.com/benelog/multiline/wiki/Non-Maven-Java-project-with-Eclipse)
 
 ## Release Notes
 - [0.1.1](https://github.com/benelog/multiline/wiki/0.1.1)

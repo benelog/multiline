@@ -28,5 +28,5 @@ is equivalent to the following expression in Groovy.
 - Settings for a Non-Maven Java Project with Eclipse
 
 ## Release Notes
-- 0.1.2 
+- [0.1.1](https://github.com/benelog/multiline/wiki/0.1.1)
 - 0.1.0 : the source code from [Adrian Walker's blog post](http://www.adrianwalker.org/2011/12/java-multiline-string.html)

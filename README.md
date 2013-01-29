@@ -1,7 +1,7 @@
 Multiline
 =========
 
-Supports multiline-string literals in Java by annotation-processors and javadoc comments. 
+An implementation of multiline string literals in Java, using Javadoc comments. 
 
 This project is originated from Adrian Walker's blog post ( <http://www.adrianwalker.org/2011/12/java-multiline-string.html> ).
 
@@ -23,7 +23,7 @@ is equivalent to the following expression in Groovy.
 	FROM post
 	"""
 
-## Settings
+## Configuration
 - [Maven project with Eclipse](https://github.com/benelog/multiline/wiki/Maven-project-with-Eclipse)
 - [Non-Maven Java project with Eclipse](https://github.com/benelog/multiline/wiki/Non-Maven-Java-project-with-Eclipse)
 

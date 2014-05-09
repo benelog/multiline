@@ -17,7 +17,6 @@ import com.sun.tools.javac.tree.JCTree.JCVariableDecl;
 import com.sun.tools.javac.tree.TreeMaker;
 
 @SupportedAnnotationTypes({"org.adrianwalker.multilinestring.Multiline"})
-@SupportedSourceVersion(SourceVersion.RELEASE_6)
 public final class JavacMultilineProcessor extends AbstractProcessor {
 
 	private JavacElements elementUtils;

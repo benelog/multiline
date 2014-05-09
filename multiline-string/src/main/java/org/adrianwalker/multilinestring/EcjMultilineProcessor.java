@@ -18,7 +18,6 @@ import org.eclipse.jdt.internal.compiler.ast.StringLiteral;
 import org.eclipse.jdt.internal.compiler.lookup.FieldBinding;
 
 @SupportedAnnotationTypes({"org.adrianwalker.multilinestring.Multiline"})
-@SupportedSourceVersion(SourceVersion.RELEASE_6)
 public final class EcjMultilineProcessor extends AbstractProcessor {
 
 	private Elements elementUtils;

@@ -31,5 +31,6 @@ is equivalent to the following expression in Groovy.
 - [Create a template for Multiline-string in Eclipse](https://github.com/benelog/multiline/wiki/Create-a-template-for-Multiline-string-in-Eclipse)
 
 ## Release Notes
+- [0.1.2](https://github.com/benelog/multiline/wiki/0.1.2)  (2015-09-08)
 - [0.1.1](https://github.com/benelog/multiline/wiki/0.1.1)  (2012-01-28)
 - 0.1.0 : the source code from [Adrian Walker's blog post](http://www.adrianwalker.org/2011/12/java-multiline-string.html)

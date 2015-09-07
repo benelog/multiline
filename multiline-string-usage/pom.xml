@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.adrianwalker</groupId>
 	<artifactId>multiline-string-usage</artifactId>
-	<version>0.1.1</version>
+	<version>0.1.2</version>
 	<packaging>jar</packaging>
 	<name>Multiline String Usage</name>
 
@@ -63,7 +63,7 @@
 		<dependency>
 			<groupId>org.adrianwalker</groupId>
 			<artifactId>multiline-string</artifactId>
-			<version>0.1.1</version>
+			<version>0.1.2</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>

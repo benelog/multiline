@@ -8,15 +8,9 @@
 	<packaging>jar</packaging>
 	<name>Multiline String</name>
 	<description>
-    Multiline string implementation using 
+    Multiline string implementation using
     an annotation processor and javadoc
     Usage: mvn clean install
-    
-    Release process
-    
-    1. Create files for maven repositories. 'mvn -DaltDeploymentRepository=multiline-release-repo::default::file:../maven-repository deploy'
-    2. git add, commit, push
-
   </description>
 	<scm>
 		<connection>scm:git:git://github.com/benelog/multiline.git</connection>
@@ -49,6 +43,11 @@
 			<organizationUrl>http://www.benelog.net</organizationUrl>
 		</developer>
 	</developers>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<bintray.repo>multiline/repo</bintray.repo>
+		<bintray.package>multiline</bintray.package>
+	</properties>
 	<build>
 		<plugins>
 			<plugin>
@@ -120,10 +119,38 @@
 		</dependency>
 	</dependencies>
 	<distributionManagement>
-    <repository>
-        <id>multiline-release-repo</id>
-        <url>https://raw.github.com/benelog/multiline/master/maven-repository</url>
-    </repository>
-</distributionManagement>
-	
+		<repository>
+			<id>bintray</id>
+			<url>https://api.bintray.com/maven/benelog/maven/multiline</url>
+		</repository>
+	</distributionManagement>
+	<profiles>
+		<profile>
+			<id>release-sign-artifacts</id>
+			<activation>
+				<property>
+					<name>performRelease</name>
+					<value>true</value>
+				</property>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>1.4</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>

@@ -40,7 +40,7 @@
 			<organization>benelog.net</organization>
 			<organizationUrl>http://www.benelog.net</organizationUrl>
 		</developer>
-	</developers>	
+	</developers>
 	<build>
 		<plugins>
 			<plugin>
@@ -74,11 +74,11 @@
 	</dependencies>
 	<repositories>
 		<repository>
-			<id>multiline-release-repo</id>
-			<url>https://raw.github.com/benelog/multiline/master/maven-repository</url>
+			<id>bintray</id>
+			<url>http://jcenter.bintray.com</url>
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
-	</repositories>	
+	</repositories>
 </project>

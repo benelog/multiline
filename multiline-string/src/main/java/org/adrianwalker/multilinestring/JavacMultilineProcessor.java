@@ -6,7 +6,6 @@ import javax.annotation.processing.AbstractProcessor;
 import javax.annotation.processing.ProcessingEnvironment;
 import javax.annotation.processing.RoundEnvironment;
 import javax.annotation.processing.SupportedAnnotationTypes;
-import javax.annotation.processing.SupportedSourceVersion;
 import javax.lang.model.SourceVersion;
 import javax.lang.model.element.Element;
 import javax.lang.model.element.TypeElement;
@@ -30,6 +29,10 @@ public final class JavacMultilineProcessor extends AbstractProcessor {
 		this.maker = TreeMaker.instance(javacProcessingEnv.getContext());
 	}
 
+	@Override public SourceVersion getSupportedSourceVersion() {
+               return SourceVersion.latest();
+        }
+
 	@Override
 	public boolean process(final Set<? extends TypeElement> annotations, final RoundEnvironment roundEnv) {
 		Set<? extends Element> fields = roundEnv.getElementsAnnotatedWith(Multiline.class);
@@ -37,7 +40,7 @@ public final class JavacMultilineProcessor extends AbstractProcessor {
 			String docComment = elementUtils.getDocComment(field);
 			if (null != docComment) {
 				JCVariableDecl fieldNode = (JCVariableDecl) elementUtils.getTree(field);
-				fieldNode.init = maker.Literal(docComment);
+				fieldNode.init = maker.Literal(StringProcessor.toString(docComment,field.getAnnotation(Multiline.class)));
 			}
 		}
 		return true;

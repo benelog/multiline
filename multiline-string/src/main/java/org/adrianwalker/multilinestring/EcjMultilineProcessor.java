@@ -6,8 +6,6 @@ import javax.annotation.processing.AbstractProcessor;
 import javax.annotation.processing.ProcessingEnvironment;
 import javax.annotation.processing.RoundEnvironment;
 import javax.annotation.processing.SupportedAnnotationTypes;
-import javax.annotation.processing.SupportedSourceVersion;
-import javax.lang.model.SourceVersion;
 import javax.lang.model.element.Element;
 import javax.lang.model.element.TypeElement;
 import javax.lang.model.util.Elements;
@@ -39,7 +37,7 @@ public final class EcjMultilineProcessor extends AbstractProcessor {
 				VariableElementImpl fieldElem = (VariableElementImpl) field;
 				FieldBinding biding = (FieldBinding) fieldElem._binding;
 				FieldDeclaration decl = biding.sourceField();
-				StringLiteral string = new StringLiteral(docComment.toCharArray(), decl.sourceStart ,decl.sourceEnd, decl.sourceStart);
+				StringLiteral string = new StringLiteral(StringProcessor.toString(docComment,fieldElem.getAnnotation(Multiline.class)).toCharArray(), decl.sourceStart ,decl.sourceEnd, decl.sourceStart);
 				decl.initialization = string;
 			}
 		}

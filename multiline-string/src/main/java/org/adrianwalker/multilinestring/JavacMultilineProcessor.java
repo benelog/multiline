@@ -6,7 +6,6 @@ import javax.annotation.processing.AbstractProcessor;
 import javax.annotation.processing.ProcessingEnvironment;
 import javax.annotation.processing.RoundEnvironment;
 import javax.annotation.processing.SupportedAnnotationTypes;
-import javax.annotation.processing.SupportedSourceVersion;
 import javax.lang.model.SourceVersion;
 import javax.lang.model.element.Element;
 import javax.lang.model.element.TypeElement;
@@ -29,6 +28,10 @@ public final class JavacMultilineProcessor extends AbstractProcessor {
 		this.elementUtils = javacProcessingEnv.getElementUtils();
 		this.maker = TreeMaker.instance(javacProcessingEnv.getContext());
 	}
+
+	@Override public SourceVersion getSupportedSourceVersion() {
+               return SourceVersion.latest();
+        }
 
 	@Override
 	public boolean process(final Set<? extends TypeElement> annotations, final RoundEnvironment roundEnv) {

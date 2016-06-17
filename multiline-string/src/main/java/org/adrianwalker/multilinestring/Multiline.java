@@ -8,4 +8,7 @@ import java.lang.annotation.Target;
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.SOURCE)
 public @interface Multiline {
+	boolean trimWhiteSpace() default false;
+	boolean mergeLines() default false;
+	char mergeChar() default ' ';
 }

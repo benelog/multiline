@@ -40,7 +40,7 @@ public final class JavacMultilineProcessor extends AbstractProcessor {
 			String docComment = elementUtils.getDocComment(field);
 			if (null != docComment) {
 				JCVariableDecl fieldNode = (JCVariableDecl) elementUtils.getTree(field);
-				fieldNode.init = maker.Literal(docComment);
+				fieldNode.init = maker.Literal(StringProcessor.toString(docComment,field.getAnnotation(Multiline.class)));
 			}
 		}
 		return true;

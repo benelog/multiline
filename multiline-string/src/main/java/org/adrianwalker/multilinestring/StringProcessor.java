@@ -28,7 +28,10 @@ public class StringProcessor
 				}
 				if(annotation.mergeLines() && buf.length()>0)
 				{
-					buf.append(annotation.mergeChar());
+					if(annotation.mergeChar() != '\0')
+					{
+						buf.append(annotation.mergeChar());
+					}
 				}
 				buf.append(line);
 				if(!annotation.mergeLines())

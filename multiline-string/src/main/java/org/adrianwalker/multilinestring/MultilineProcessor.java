@@ -1,5 +1,7 @@
 package org.adrianwalker.multilinestring;
 
+import java.net.URL;
+import java.net.URLClassLoader;
 import java.util.Set;
 
 import javax.annotation.processing.AbstractProcessor;
@@ -22,10 +24,24 @@ public final class MultilineProcessor extends AbstractProcessor {
 	  if (envClassName.contains("com.sun.tools")) {
 		  delegator = new JavacMultilineProcessor();
 	  } else {
-		  delegator = new EcjMultilineProcessor();
+		try 
+	  	{
+			delegator =  (Processor) new ProxyClassLoader(((URLClassLoader)MultilineProcessor.class.getClassLoader()).getURLs(),Thread.currentThread().getContextClassLoader())
+		  	.loadClass("org.adrianwalker.multilinestring.EcjMultilineProcessor").newInstance();
+		  }	 
+		  	catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) 
+		  	{
+		  		throw new RuntimeException(e);
+		  	}
 	  }
 	  delegator.init(procEnv);
   }
+  
+  @Override 
+	public SourceVersion getSupportedSourceVersion() 
+	{
+      return SourceVersion.latest();
+	}
 
   @Override
   public boolean process(final Set<? extends TypeElement> annotations, final RoundEnvironment roundEnv) {
@@ -33,5 +49,37 @@ public final class MultilineProcessor extends AbstractProcessor {
 		  return true;
 	  }
 	  return delegator.process(annotations, roundEnv);
+  }
+  
+  private static class ProxyClassLoader extends URLClassLoader {
+	    private final ClassLoader contextLoader;
+
+	    ProxyClassLoader(URL[] urls, ClassLoader contextLoader) {
+	      super(urls, contextLoader);
+	      this.contextLoader = contextLoader;
+	    }
+
+	    @Override
+	    public Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
+	      synchronized (getClassLoadingLock(name)) {
+	        Class<?> c;
+	        if (!name.startsWith("org.adrianwalker.multilinestring")) {
+	          c = contextLoader.loadClass(name);
+	        } else {
+	          c = findLoadedClass(name);
+	          if (c == null) {
+	            try {
+	              c = findClass(name);
+	            } catch (ClassNotFoundException ex) {
+	              return super.loadClass(name, resolve);
+	            }
+	          }
+	        }
+	        if (resolve) {
+	          resolveClass(c);
+	        }
+	        return c;
+	      }
+	    }
   }
 }
